@@ -28,6 +28,8 @@ public class fatherClass {
             choice = sc.nextInt();
             
              switch(choice){
+                 
+                 //crate
                  case(1):
                      System.out.print("Enter registry no : ");
                      int a = sc.nextInt();
@@ -54,6 +56,9 @@ public class fatherClass {
                      
                  
                     break;
+                    
+                    
+                // display
                 case(2):
                     
                     System.out.println("===== VIEW DETAILS =====");
@@ -69,6 +74,7 @@ public class fatherClass {
                 
                 break;
                 
+                // search
                 case(3):
                     
                     boolean found = false;
@@ -83,8 +89,6 @@ public class fatherClass {
                             System.out.println(ss);
                             found = true;
                         }
-                        
-                   
                     }
                     
                     if(!found){
@@ -94,11 +98,85 @@ public class fatherClass {
                     System.out.println("===========================");
                 
                     break;
+                // delete    
                 case(4):
-                    loginClass account = new loginClass();
-                    account.loginShow();
+                    found = false;
+                    System.out.println("Enter regirsty no to delete the record: ");
+                    registryNO = sc.nextInt();
+                    System.out.println("===========================");
+                    
+                    i = father.iterator();
+                    while(i.hasNext()){
+                        exampleMethod ss = i.next();
+                        if(ss.getRegistryNO() == registryNO){
+                            i.remove();
+                            found = true;
+                        }
+                    }
+                    
+                    if(!found){
+                        
+                        System.out.println("Record not found");
+                    }else{
+                        System.out.println("The record is deleted successfully");
+                    }
+                    System.out.println("===========================");
+                
                 
                     break;
+                // update    
+                case(5):
+                    
+                    /*
+                    found = false;
+                    System.out.println("Enter regirsty no to update the record: ");
+                    registryNO = sc.nextInt();
+                    System.out.println("===========================");
+                    ListIterator<exampleMethod> li = father.listIterator();
+                    while(li.hasNext()){
+                        exampleMethod ss = li.next();
+                        if(ss.getRegistryNO() == registryNO){
+                            i.remove();
+                            
+                            
+                            
+                            found = true;
+                        }
+                    }
+                    
+                    if(!found){
+                        
+                        System.out.println("Record not found");
+                    }else{
+                        System.out.println("The record is update successfully");
+                    }
+                    System.out.println("=========");
+                    
+                    */
+                   
+                 /*
+                    break; 
+                   
+                case 6:
+               found = false;
+               System.out.print("Enter Empname to Search :");
+               ename = s1.nextLine();
+               System.out.println("----------------------------");
+               i = c.iterator();
+               while(i.hasNext()){
+                  Employee e = i.next();
+                  if(e.getEname().equals(ename))  {
+                     System.out.println(e);
+                     found = true;
+                  }
+               }
+               
+               if(!found){
+                  System.out.println("Record Not Found");
+               }
+               System.out.println("----------------------------");
+            break;    
+                   */ 
              }
                 
         

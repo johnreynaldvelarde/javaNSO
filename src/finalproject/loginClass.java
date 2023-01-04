@@ -72,9 +72,9 @@ public class loginClass {
               
                }
                else{
-                   System.out.println("Operator");
-               
-          
+                   
+                   operatorClass operator = new operatorClass();
+                   operator.operatorShow();
                }
            
             }
