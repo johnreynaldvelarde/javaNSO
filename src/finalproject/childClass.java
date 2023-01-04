@@ -3,17 +3,6 @@ package finalproject;
 
 public class childClass {
     
-    private String childName;
-    private String sex =  "";
-    private String childDateBirth;
-   // private String sex []
-    // type of birth
-  //  private String
-    private double weightBirth;        
-            
-    
-    
-    
     childClass(){
     
     
@@ -22,6 +11,7 @@ public class childClass {
     public void childCreate(){
         
         System.out.println("-----CHILD INFORMATION-----");
+        System.out.println("");
         
         System.out.println("A. Type of birth");
         System.out.println("[1] Single ");

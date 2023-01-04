@@ -95,10 +95,9 @@ public class fatherClass {
                 
                     break;
                 case(4):
-                    
-                    
-                    
-                    
+                    loginClass account = new loginClass();
+                    account.loginShow();
+                
                     break;
              }
                 
