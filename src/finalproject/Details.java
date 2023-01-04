@@ -30,10 +30,22 @@ public class Details {
     private String attenDant;
    
     
-    Details(){
-    
-    
-    
+    Details(int registryNO, String childName){
+        this.registryNO = registryNO;
+        this.childName = childName;
+    }
+
+    public int getRegistryNO() {
+        return registryNO;
+    }
+
+    public String getChildName() {
+        return childName;
+    }
+
+    public String toString(){
+        
+        return registryNO +" ----> "+ childName ;
     }
     
     

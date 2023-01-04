@@ -5,12 +5,15 @@ import java.util.*;
 public class methodAccess {
     
     Scanner sc = new Scanner(System.in);
+    Collection<Details> collect = new ArrayList<Details>();
     Random id = new Random();
+    
+    
    
     int choice;
     int seleNum;
-    int randomNumber;
-    int num;
+    int ranID;
+    
     
     methodAccess(){
     
@@ -19,13 +22,15 @@ public class methodAccess {
     }
     // generating random number;
     public void generateID(){
+        /*
          for(int count = 1; count<=4; count++){
             randomNumber = id.nextInt(9);
             //System.out.print(randomNumber); 
         }
-             
+         */
+        ranID = id.nextInt(10000);
     }
-    
+  
     public void rootMethod(){
         
         int ch;
@@ -49,13 +54,28 @@ public class methodAccess {
                     // create
                     case 1:
                         generateID();
+                        System.out.println("");
+                        System.out.println("Registry no: " + ranID);
+                        
+                        sc.nextLine();
+                        System.out.print("Enter child name: ");
+                        String a = sc.nextLine();
+                        
+                        collect.add(new Details(ranID, a));
                        
-                        System.out.println(randomNumber);
                         
                         break;
                         
                     // view    
-                    case 2: 
+                    case 2:
+                         System.out.println("");
+                         System.out.println("===== VIEW DETAILS =====");
+                         Iterator<Details>i = collect.iterator();
+                         while(i.hasNext()){
+                        
+                            Details ss = i.next();
+                            System.out.println(ss);
+                        }
                         
                         break;
                         
