@@ -35,7 +35,7 @@ public class adminClass {
                 System.out.println("[2] === Managing NSO birth certificate ");
                 System.out.println("[3] === View the list of NSO birth certificate ");
                 System.out.println("[4] === Logout your account ");
-                System.out.println("[5] === Exit the program ");
+                System.out.println("[0] === Exit the program ");
                 System.out.println("");
                 System.out.print("Enter the selected number: ");
                 select = sc.nextInt();             
@@ -81,8 +81,9 @@ public class adminClass {
                      
                      // manage new nso birth certificate
                      case(2):
-                                     
-                                                                         
+                         methodAccess method = new methodAccess();
+                         method.rootMethod();
+                                                                                  
                      break;
                      
                      case(3):
@@ -98,35 +99,23 @@ public class adminClass {
                                                                                        
                      
                      
-                     case(5):
-                         
-                         // system exit                                                                
-                     return;
-                 
-                 
-                 
-                 
-                 
+                     case(0):
+                        System.out.println("");
+                        System.out.println(" ========================");
+                        System.out.println("║     Program Exit      ║");
+                        System.out.println(" ========================");
+                        break;
+              
+                     default:
+                         System.out.println("");
+                         System.out.println("Invalid Input --- Try Again!!! ");
                  }
                
             }while(select!=0);
         
-        
-        
-        
-            
-            
-            
-            
-            
         }catch(Exception e){
             
             System.out.println("Message: " + e);
         }
-    
-    
-    
     }
-    
-    
 }
