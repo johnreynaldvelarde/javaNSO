@@ -25,10 +25,7 @@ public class accountClass {
     
     public void accoutLogin(){
         
-                   
-        
-        
-        
+                 
         try{
             String s = "";
             String User;
@@ -43,10 +40,7 @@ public class accountClass {
             InputStream input = Files.newInputStream(filePath); 
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
             
-            
-      
-            
-            
+          
             System.out.println("-----Login your account----");
             System.out.println("");
             
@@ -98,18 +92,6 @@ public class accountClass {
                                      System.out.println("[0]--> Admistrator");
                                      System.out.println("[1]--> Operator");
                                      String number = sc.nextLine();
-                                     
-                                     for(int i = 0; i<personelRole.length; i++){
-                                         
-                                         if(personelRole[i] == number){
-                                             
-                                             System.out.println(i);
-                                            
-                                         
-                                         }
-                                
-                                     }
-                                     
                                      
                                      
                                      System.out.print("Username: ");
