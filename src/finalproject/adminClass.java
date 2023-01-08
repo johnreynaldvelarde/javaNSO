@@ -10,6 +10,10 @@ public class adminClass {
     Scanner sc = new Scanner(System.in);
     Path filePath = Paths.get("C:\\Users\\Lenovo\\Desktop\\records.txt");
     
+    loginClass login = new loginClass();
+    methodAccess method = new methodAccess();
+    certificateClass ce = new certificateClass();
+    
     private String username;
     private String password;
     private String user_role = "";
@@ -81,24 +85,25 @@ public class adminClass {
                      
                      // manage new nso birth certificate
                      case(2):
-                         methodAccess method = new methodAccess();
-                         method.rootMethod();
-                                                                                  
+                         
+                         method.adminMethod();
+                         
                      break;
                      
+                     // view certificate
                      case(3):
-                                     
-                                                                         
+                         
+                         ce.viewBirth();
+                                                                              
                      break;
                      
                      // logout
                      case(4):
                          
-                         loginClass login = new loginClass();
                          login.loginShow();
+                         
+                         break;
                                                                                        
-                     
-                     
                      case(0):
                         System.out.println("");
                         System.out.println(" ========================");

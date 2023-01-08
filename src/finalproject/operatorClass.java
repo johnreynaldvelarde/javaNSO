@@ -3,12 +3,14 @@ package finalproject;
 
 public class operatorClass {
     
+    methodAccess method = new methodAccess();
+    
     operatorClass(){
     
     }
     
     public void operatorShow(){
-        System.out.println("GAADKAKDAKDKDKDKDKD");
+       method.operatorMethod();
     }
     
 }

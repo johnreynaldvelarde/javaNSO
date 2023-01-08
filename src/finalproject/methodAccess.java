@@ -1,15 +1,12 @@
 
 package finalproject;
-import java.util.*;
 
+import java.util.*;
 public class methodAccess {
     
     Scanner sc = new Scanner(System.in);
-    Collection<Details> collect = new ArrayList<Details>();
-    Random id = new Random();
-    
-    
-   
+    certificateClass ce = new certificateClass();
+    loginClass login = new loginClass();
     int choice;
     int seleNum;
     int ranID;
@@ -20,18 +17,9 @@ public class methodAccess {
     
     
     }
-    // generating random number;
-    public void generateID(){
-        /*
-         for(int count = 1; count<=4; count++){
-            randomNumber = id.nextInt(9);
-            //System.out.print(randomNumber); 
-        }
-         */
-        ranID = id.nextInt(10000);
-    }
+    
   
-    public void rootMethod(){
+    public void adminMethod(){
         
         int ch;
         
@@ -53,30 +41,16 @@ public class methodAccess {
                 switch(ch){
                     // create
                     case 1:
-                        generateID();
-                        System.out.println("");
-                        System.out.println("Registry no: " + ranID);
                         
-                        sc.nextLine();
-                        System.out.print("Enter child name: ");
-                        String a = sc.nextLine();
-                        
-                        collect.add(new Details(ranID, a));
+                        ce.createBirth();
                        
-                        
                         break;
                         
                     // view    
                     case 2:
-                         System.out.println("");
-                         System.out.println("===== VIEW DETAILS =====");
-                         Iterator<Details>i = collect.iterator();
-                         while(i.hasNext()){
                         
-                            Details ss = i.next();
-                            System.out.println(ss);
-                        }
-                        
+                        ce.viewBirth();
+                       
                         break;
                         
                     // search    
@@ -108,6 +82,59 @@ public class methodAccess {
             System.out.println("Message: " + e);
         }
    
+    }
+    
+    
+    
+    // for operator
+    public void operatorMethod(){
+        
+         int ch;
+        
+        try{
+            do{
+                
+                System.out.println("");
+                System.out.println("Press [1] to view the list of NSO birth certificate");
+                System.out.println("Press [2] to search the birth certificate");
+               
+                System.out.println("[0] === Logout your account ");
+                System.out.println("");
+                System.out.print("Enter the selected number: ");
+                ch = sc.nextInt();
+                
+                switch(ch){
+                    // view
+                    case 1:
+                        
+                        ce.viewBirth();
+                       
+                        break;
+                        
+                    // search    
+                    case 2:
+                        
+                        
+                       
+                        break;
+                        
+                    // logout
+                    case (0):
+                        login.loginShow();
+                        
+                        break;
+                        
+                    default: 
+                        System.out.println("Invalid Input --- Try Again!!! ");
+                }
+            }while(ch!=0);
+         
+        }catch(Exception e){
+            
+            System.out.println("Message: " + e);
+        }
+    
+    
     }
     
    

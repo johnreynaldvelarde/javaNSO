@@ -8,8 +8,6 @@ public class Main {
       
        loginClass login = new loginClass();
        login.loginShow();
-       //methodAccess method = new methodAccess();
-     //  method.childCreate();
+      
     }
-    
 }
