@@ -30,11 +30,13 @@ public class Details {
     private String attenDant;
    
     
-    Details(int registryNO, String childName){
+    Details(int registryNO, String childName, String childSex){
         this.registryNO = registryNO;
         this.childName = childName;
+        this.childSex = childSex;
+    
     }
-
+    
     public int getRegistryNO() {
         return registryNO;
     }

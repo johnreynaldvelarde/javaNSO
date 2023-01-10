@@ -10,12 +10,6 @@ public class Manage_PSA {
     Login_Class login = new Login_Class();
     Certificate_Class ce = new Certificate_Class();
     
-  
-    
-    int choice;
-    int seleNum;
-    int ranID;
-    
     
     public void createPSA(){
         
@@ -23,12 +17,12 @@ public class Manage_PSA {
         
         try{
             do{
-                
+                // model about managing the psa birth certificate
                 System.out.println("");
-                System.out.println("Press [1] to create new NSO birth certificate");
-                System.out.println("Press [2] to view the list of NSO birth certificate");
-                System.out.println("Press [3] to delete the birth certificate");
-               
+                System.out.println("Press [1] to create new PSA birth certificate");
+                System.out.println("Press [2] to view the new created PSA birth certificate");
+                System.out.println("Press [3] to show the list of existing PSA birth certificate");
+                //System.out.println("Press [4] to delete the birth certificate"
                 System.out.println("[0] === Back to the past module ");
                 System.out.println("");
                 System.out.print("Enter the selected number: ");
@@ -50,20 +44,12 @@ public class Manage_PSA {
                         break;
                         
                     // search    
-                    case 3: 
+                    case 3:
+                        
+                        ce.generateList();
                         
                         break;
                         
-                    // update    
-                    case 4: 
-                        
-                        break;
-                    
-                    //delete    
-                    case 5: 
-                        
-                        
-                        break;
                     case (0):
                        // undo
                         break;
