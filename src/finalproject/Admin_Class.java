@@ -1,30 +1,28 @@
 
 package finalproject;
+
 import java.util.*;
 import java.nio.file.*;
 import java.io.*;
 import static java.nio.file.StandardOpenOption.*;
 
-public class adminClass {
+public class Admin_Class {
     
     Scanner sc = new Scanner(System.in);
     Path filePath = Paths.get("C:\\Users\\Lenovo\\Desktop\\records.txt");
     
-    loginClass login = new loginClass();
-    methodAccess method = new methodAccess();
-    certificateClass ce = new certificateClass();
+    Login_Class login = new Login_Class();
+    Manage_PSA manage = new Manage_PSA();
+    
+    
     
     private String username;
     private String password;
     private String user_role = "";
     
-    adminClass(){
-        
-
-    }
-    
-    // method admin
-    public void adminDisplay(){
+  
+    // method to show the module available in administrator mode
+    public void adminShow(){
         
         int select;
         String s = "";
@@ -36,9 +34,9 @@ public class adminClass {
             do{
                 System.out.println("");
                 System.out.println("[1] === Create new personnel account ");
-                System.out.println("[2] === Managing NSO birth certificate ");
-                System.out.println("[3] === View the list of NSO birth certificate ");
-                System.out.println("[4] === Logout your account ");
+                System.out.println("[2] === Managing PSA birth certificate ");
+                System.out.println("[3] === View the list of PSA birth certificate ");
+                System.out.println("[4] === Logout the account ");
                 System.out.println("[0] === Exit the program ");
                 System.out.println("");
                 System.out.print("Enter the selected number: ");
@@ -86,14 +84,14 @@ public class adminClass {
                      // manage new nso birth certificate
                      case(2):
                          
-                         method.adminMethod();
+                         manage.createPSA();
                          
                      break;
                      
                      // view certificate
                      case(3):
                          
-                         ce.viewBirth();
+                        
                                                                               
                      break;
                      
@@ -123,4 +121,5 @@ public class adminClass {
             System.out.println("Message: " + e);
         }
     }
+    
 }

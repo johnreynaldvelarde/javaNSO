@@ -2,24 +2,22 @@
 package finalproject;
 
 import java.util.*;
-public class methodAccess {
+
+public class Manage_PSA {
     
     Scanner sc = new Scanner(System.in);
-    certificateClass ce = new certificateClass();
-    loginClass login = new loginClass();
+    
+    Login_Class login = new Login_Class();
+    Certificate_Class ce = new Certificate_Class();
+    
+  
+    
     int choice;
     int seleNum;
     int ranID;
     
     
-    methodAccess(){
-    
-    
-    
-    }
-    
-  
-    public void adminMethod(){
+    public void createPSA(){
         
         int ch;
         
@@ -29,9 +27,7 @@ public class methodAccess {
                 System.out.println("");
                 System.out.println("Press [1] to create new NSO birth certificate");
                 System.out.println("Press [2] to view the list of NSO birth certificate");
-                System.out.println("Press [3] to search the birth certificate");
-                System.out.println("Press [4] to update the birth certificate");
-                System.out.println("Press [5] to delete the birth certificate");
+                System.out.println("Press [3] to delete the birth certificate");
                
                 System.out.println("[0] === Back to the past module ");
                 System.out.println("");
@@ -86,7 +82,7 @@ public class methodAccess {
     
     
     
-    // for operator
+    // for operator class
     public void operatorMethod(){
         
          int ch;
@@ -137,5 +133,4 @@ public class methodAccess {
     
     }
     
-   
 }

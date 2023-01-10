@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
       
-       loginClass login = new loginClass();
+       Login_Class login = new Login_Class();
        login.loginShow();
       
     }

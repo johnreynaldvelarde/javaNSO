@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.*;
 import static java.nio.file.StandardOpenOption.*;
 
-public class loginClass {
+public class Login_Class {
     
     private String username;
     private String password;
@@ -16,9 +16,7 @@ public class loginClass {
     Path filePath = Paths.get("C:\\Users\\Lenovo\\Desktop\\records.txt");
     Scanner sc = new Scanner(System.in);
     
-    
-    loginClass(){}
-    
+   
     public void loginShow(){
         
       
@@ -45,14 +43,12 @@ public class loginClass {
             System.out.print("Enter your password: ");
             password = sc.nextLine();
             
-            while((listname=reader.readLine()) !=null){
+            while((listname=reader.readLine()) !=null){ // reading the existing data in text file
                 
                 String[] details = listname.split(",");
                 Role = details[0];
                 User = details[1];
                 Pass = details[2];
-                
-                
                 
                 if(User.equals(username) && Pass.equals(password))
                 {
@@ -65,16 +61,17 @@ public class loginClass {
        
             if(condi==true)
             {
-               if(passRole.equals("Admin")){
+               if(passRole.equals("Admin")){ // going to administrator class
                    
-                  adminClass admin = new adminClass();
-                  admin.adminDisplay();
+                   Admin_Class admin = new Admin_Class();
+                   admin.adminShow();
               
                }
-               else{
+               else{ // going to operator class
                    
-                   operatorClass operator = new operatorClass();
-                   operator.operatorShow();
+                  Operator_Class operator = new Operator_Class();
+                  operator.operatorShow();
+                  
                }
            
             }
@@ -82,7 +79,7 @@ public class loginClass {
             else{
                 System.out.println("");
                 System.out.println("Incorrect username or password Try Again!!!");
-                loginClass login = new loginClass();
+                Login_Class login = new Login_Class();
                 login.loginShow();
             }
     

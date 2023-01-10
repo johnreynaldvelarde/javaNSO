@@ -1,18 +1,19 @@
 
 package finalproject;
+
 import java.util.*;
-public class certificateClass {
+
+public class Certificate_Class {
     
     Scanner sc = new Scanner(System.in);
+    
     Collection<Details> collect = new ArrayList<Details>();
     Random id = new Random();
     
     int ranID;
     
     
-    certificateClass(){
-    
-    }
+
     
     // generating random number;
     public void generateID(){
@@ -64,5 +65,6 @@ public class certificateClass {
         
     
     }
+    
     
 }
