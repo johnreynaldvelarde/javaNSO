@@ -1,17 +1,19 @@
 
 package finalproject;
 
+
+import java.io.IOException;
 import java.util.*;
 
 public class Certificate_Class extends Data {
     
+   
+   
  
     Scanner sc = new Scanner(System.in);
+    Calendar calndr = Calendar.getInstance();
   
-   // HashMap<Integer, Set<String>> hashMap = new HashMap<Integer, Set<String>>();
-   // HashMap<Integer, ArrayList<String>> map = new  HashMap<Integer, ArrayList<String>>();
-   // ArrayList array = new ArrayList();
-    //ArrayList list = new ArrayList();
+   
     
     Random id = new Random();
     
@@ -22,7 +24,7 @@ public class Certificate_Class extends Data {
     }
     
     // creating birth certificate // module case 1
-    public void createBirth(){
+    public void createBirth() throws IOException{
         
         generateID();
         
@@ -39,11 +41,14 @@ public class Certificate_Class extends Data {
         getInfoName();
         // asking sex
         getSex();
+        // asking child birth
+        getDate();
+        // asking type of birth
+        getTypeBirth();
         
         
         collectData();
-        
-       
+         
     }
     
     // view the list of  birth certificate // module case 2
@@ -52,20 +57,12 @@ public class Certificate_Class extends Data {
         System.out.println("");
         System.out.println("Registry No: " + ranID);
         System.out.println("");
-        System.out.println("Child Name: " + a_firstname +" "+ b_middlename +" "+ c_lastname);
+        System.out.println("Child Name: " + c_firstname +" "+ c_middlename +" "+ c_lastname);
         System.out.println("Sex: " + childSex);
+        System.out.println("Date of Birth: " + childBirth);
      
-        /*
-         System.out.println("");
-         System.out.println("===== VIEW DETAILS =====");
-         Iterator i = collect.iterator();
-         while(i.hasNext()){
-                        
-         Details ss = i.next();
-         System.out.println(ss);
     
-         }
-        */
+        
     }
     
     // generate all list of birth certificate // module case 3
@@ -90,8 +87,11 @@ public class Certificate_Class extends Data {
     
     }
     
+    
+    
+    
     //================================================================================================================//
-    // collection of combine me
+    // CHILD SECTION PART
     //================================================================================================================//
     
      public void askUserAgain() {
@@ -103,19 +103,19 @@ public class Certificate_Class extends Data {
      
     public void getInfoName(){
         
-          String answer01;
+        String answer01;
         do {
             System.out.println("");
-            System.out.println("----------------Name----------------");
+            System.out.println("========== Name ==========");
             System.out.println("");
             System.out.print("Enter First Name: ");
-            a_firstname = sc.nextLine();
+            c_firstname = sc.nextLine();
             System.out.print("Enter Middle Name: ");
-            b_middlename = sc.nextLine();
+            c_middlename = sc.nextLine();
             System.out.print("Enter Last Name: ");
             c_lastname = sc.nextLine();
                                                                             //checks if the user tried to enter or space only
-            if (  a_firstname.isEmpty() ||   a_firstname.equals(" ") || b_middlename .isEmpty() || b_middlename .equals(" ")
+            if (  c_firstname.isEmpty() ||   c_firstname.equals(" ") || c_middlename .isEmpty() || c_middlename .equals(" ")
                 || c_lastname.isEmpty() || c_lastname.equals(" ")) 
             {
                 System.out.println("");
@@ -139,7 +139,8 @@ public class Certificate_Class extends Data {
         char sex;
         do {
             try {
-                System.out.println("----------------Sex----------------");
+                System.out.println("========== Sex ==========");
+                System.out.println("");
                 System.out.println("Press [F] for Female, Press [M] for Male");
                 System.out.print("Enter Sex: ");
                 sex = sc.next().charAt(0);
@@ -150,13 +151,13 @@ public class Certificate_Class extends Data {
                 if( sex == 'M' || sex == 'm'){
                     
                     childSex = "Male";
-                    System.out.println("Registered Sucess");
+                   
                     askUser = 0;
                 }
                 else if(sex == 'f' || sex == 'F' ){
                     
                     childSex = "Female";
-                    System.out.println("Registered Sucess");
+                   
                     askUser = 0;
                     
                 }
@@ -172,4 +173,70 @@ public class Certificate_Class extends Data {
         } while (askUser == 1);
     }
     
+    
+    public void getDate() { // move this to child class... date's use is for marriage
+        
+        System.out.println("");
+        System.out.println("========== Date of Birth ==========");
+        System.out.println("");
+        System.out.println("Example: dd/mm/yyyy");
+        
+        try {
+            
+            System.out.print("Enter Day: ");
+            int inputDay = sc.nextInt(); // this is where input Day stores
+            sc.nextLine();
+            
+            if (inputDay < 31 && inputDay >= 1) {// ------------------input Day---------------------------------
+                
+                calndr.set(Calendar.DAY_OF_MONTH, day = inputDay); // sets the user input of day in month
+                System.out.println("Day has been set");
+                
+            } else if (inputDay > 31) {
+                System.out.println("Don't input more than 31 in day");
+            }
+
+            System.out.print("Enter Month: "); // ------------------input Month---------------------------------
+            int inputMonth = sc.nextInt(); // Stores the input Month
+
+            if (inputMonth <= 12 && inputMonth >= 1) {
+                calndr.set(Calendar.MONTH, month = inputMonth); // sets the month
+                System.out.println("Month has been set");
+            } else if (inputMonth > 12) {
+                System.out.println("There are only 12 months");
+            } else {
+                System.out.println("----Invalid Input-----");
+            }
+            
+            System.out.print("Enter Year: "); // ------------------input Year---------------------------------
+            int inputYear = sc.nextInt();
+            String inputYear02 = inputYear + "";
+            
+            if (inputYear02.length() <= 4) { // check if the inputYear is lessthan 4 then proceed
+                calndr.set(Calendar.YEAR, year = inputYear);
+                System.out.println("Year has been set");
+            } else if (inputYear02.length() > 4) {
+                System.out.println("Year only consist 4 numbers..");
+                
+            } else {
+                System.out.println("Invalid Input");
+            }
+            
+        } catch (InputMismatchException e) {
+            System.out.println("Wrong input");
+        }
+        
+    }
+    
+   public void getPlaceBirth(){
+   
+   
+   
+   }
+   
+   public void getTypeBirth(){
+       
+        
+    
+   }
 }

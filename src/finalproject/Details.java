@@ -1,7 +1,9 @@
 
 package finalproject;
 
-public class Details {
+import java.io.Serializable;
+
+public class Details implements Serializable{
     
     //first part data
     private int registryNO;
@@ -30,10 +32,11 @@ public class Details {
     private String attenDant;
    
     
-    Details(int registryNO, String childName, String childSex){
+    Details(int registryNO, String childName, String childSex, String childBirth){
         this.registryNO = registryNO;
         this.childName = childName;
         this.childSex = childSex;
+        this.childBirth = childBirth;
     
     }
     
