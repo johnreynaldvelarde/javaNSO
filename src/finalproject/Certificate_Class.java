@@ -148,6 +148,34 @@ public class Certificate_Class extends Data {
         System.out.println("");
         System.out.println("========== ANOTHER INFORMATION ==========");
         System.out.println("");
+        System.out.println("18. Date and place of marriage of the parents: " + datePlace );
+        System.out.println("19. A. Attendant: " + a_attendant);
+        System.out.println("");
+        System.out.println("    B. Certification of birth");
+        System.out.println("(I hereby that I attended the birth of the child who was born alive at () o clock am/pm on the date stated above)  " + timeAttend );
+        System.out.println("(Name in print) " + attendName);
+        System.out.println("(Title or Position) " + attendTitle);
+        System.out.println("(Address) " + attendAdress);
+        System.out.println("(Date) " + attendDate);
+        System.out.println("");
+        System.out.println("20. Informant: ");
+        System.out.println("(Name in print) " + infoName);
+        System.out.println("(Relationship of the child): " + infoRelo);
+        System.out.println("(Address) " + infoAddress);
+        System.out.println("(Date) " + infoDate);
+        System.out.println("");
+        System.out.println("21. Prepared by: ");
+        System.out.println("(Name in print) " + preName);
+        System.out.println("(Title or Position) " + preTitle);
+        System.out.println("(Date) " + preDate);
+        System.out.println("");
+        System.out.println("22. Received at the office of civil registrar: ");
+        System.out.println("(Name in print) " + regiName);
+        System.out.println("(Title or Position) " + regiTitle);
+        System.out.println("(Date) " + regiDate);
+        System.out.println("");
+        
+        
     }
     
     // generate all list of birth certificate // module case 3
@@ -966,8 +994,9 @@ public class Certificate_Class extends Data {
     
      public void successDisplay(){
          
-         
-         System.out.println("Registered Successfully");
+         System.out.println("");
+         System.out.println("========== Registered Successfully ==========");
+         System.out.println("");
 
      }
      
