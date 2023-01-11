@@ -33,7 +33,8 @@ public class Data  {
     String c_firstname, c_middlename, c_lastname;
     int day, month, year;  
     
-    String childName, childSex, childBirth, a_typeBirth;
+    String childName, childSex, childBirth, a_typeBirth, b_ifBirth, c_childOrder;
+    double weight;
     
     
     
@@ -41,7 +42,7 @@ public class Data  {
     
     public void collectData() throws FileNotFoundException, IOException{
         
-        
+      
       childName =  c_lastname + "," + c_firstname + " " + c_middlename;
       childBirth = day + "/" + month + "/" + year;
       
@@ -74,5 +75,5 @@ public class Data  {
     
     
     }
-   
+     
 }

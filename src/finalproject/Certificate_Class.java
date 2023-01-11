@@ -7,13 +7,10 @@ import java.util.*;
 
 public class Certificate_Class extends Data {
     
-   
-   
- 
     Scanner sc = new Scanner(System.in);
     Calendar calndr = Calendar.getInstance();
-  
-   
+    
+
     
     Random id = new Random();
     
@@ -38,15 +35,27 @@ public class Certificate_Class extends Data {
         System.out.println("");
         
         // asking name
-        getInfoName();
+        getchildInfoName();
         // asking sex
         getSex();
         // asking child birth
         getDate();
-        // asking type of birth
+        // a_asking type of birth
         getTypeBirth();
+        // b_if birth
+        getIfBirth();
+        // c birth order
+        getBirthOrder();
+        // d child weight
+        getWeight();
         
+        System.out.println("");
+        System.out.println("=======================================");
+        System.out.println("=          MOTHER INFORMATION         =");
+        System.out.println("=======================================");
+        System.out.println("");
         
+      
         collectData();
          
     }
@@ -57,18 +66,28 @@ public class Certificate_Class extends Data {
         System.out.println("");
         System.out.println("Registry No: " + ranID);
         System.out.println("");
+        System.out.println("========== CHILD INFORMATION ==========");
+        System.out.println("");
         System.out.println("Child Name: " + c_firstname +" "+ c_middlename +" "+ c_lastname);
         System.out.println("Sex: " + childSex);
         System.out.println("Date of Birth: " + childBirth);
-     
+        System.out.println("A. Type of birth: " + a_typeBirth);
+        System.out.println("B. If multiple birth, child was: " + b_ifBirth);
+        System.out.println("C. Birth order: " + c_childOrder);
+        System.out.println("D. Weight at birth: " + weight);
+        System.out.println("");
+        System.out.println("========== MOTHER INFORMATION ==========");
+        System.out.println("");
     
         
     }
     
     // generate all list of birth certificate // module case 3
     public void generateList(){
-        
-         System.out.println("=======================================");
+         
+         System.out.println("");
+         System.out.println("========== RECORD LIST BIRTH CERTIFICATE ==========");
+         System.out.println("");
          Iterator<Details> i = collect.iterator();
          while(i.hasNext()){
              Details e = i.next();
@@ -88,20 +107,18 @@ public class Certificate_Class extends Data {
     }
     
     
-    
-    
     //================================================================================================================//
-    // CHILD SECTION PART
+    // CHILD SECTION PART                                                                                             //
     //================================================================================================================//
-    
-     public void askUserAgain() {
+   
+    public void askUserAgain() {
         System.out.println("------------------------------");
         System.out.println("Press [1] to try again \nPress any key to continue");
         System.out.println("------------------------------");
 
     }
      
-    public void getInfoName(){
+    public void getchildInfoName(){
         
         String answer01;
         do {
@@ -236,7 +253,192 @@ public class Certificate_Class extends Data {
    
    public void getTypeBirth(){
        
+        int askUser = 0; 
+       
+        String ch;
         
-    
+        do {
+            try {
+                System.out.println("");
+                System.out.println("========== A. TYPE OF BIRTH ==========");
+                System.out.println("");
+                System.out.println("[1] --> Single ");
+                System.out.println("[2] --> Twin   ");
+                System.out.println("[3] --> Triplet,etc ");
+                System.out.println("");
+                System.out.print("Enter selected number: ");
+                ch = sc.nextLine();
+                // askUserAgain();
+                // System.out.print("Enter: ");
+                // askUser = s.nextInt();
+
+                if(ch.equalsIgnoreCase("1")){
+                    
+                    a_typeBirth = "Single";
+                   
+                    askUser = 0;
+                }
+                else if(ch.equalsIgnoreCase("2")){
+                    
+                    a_typeBirth = "Twin";
+                   
+                    askUser = 0;
+                    
+                }else if(ch.equalsIgnoreCase("3")){
+                    
+                    a_typeBirth = " Triplet";
+                    askUser = 0;
+                }
+                else{
+                    System.out.println("Plss input the only selected" );
+                    askUser = 1;
+                }
+                
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid Input Try Again!!!");
+                askUser = 1;
+            }
+        } while(askUser== 1);
    }
+   
+   public void getIfBirth(){
+       
+        int askUser = 0; 
+       
+        String ch;
+        
+        do {
+            try {
+                System.out.println("");
+                System.out.println("========== B. IF MULTIPLE BIRTH, CHILD WAS ==========");
+                System.out.println("");
+                System.out.println("[1] --> First ");
+                System.out.println("[2] --> Second  ");
+                System.out.println("[3] --> Others, Specify ");
+                System.out.println("[4] --> If not multiple birth ");
+                
+                System.out.println("");
+                System.out.print("Enter selected number: ");
+                ch = sc.nextLine();
+                // askUserAgain();
+                // System.out.print("Enter: ");
+                // askUser = s.nextInt();
+
+                if(ch.equalsIgnoreCase("1")){
+                    
+                    b_ifBirth = "First";
+                   
+                    askUser = 0;
+                }
+                else if(ch.equalsIgnoreCase("2")){
+                    
+                    b_ifBirth = "Second";
+                   
+                    askUser = 0;
+                    
+                }else if(ch.equalsIgnoreCase("3")){
+                    
+                    System.out.print("Specify: ");
+                    b_ifBirth = sc.nextLine();
+                    askUser = 0;
+                }
+                else if(ch.equalsIgnoreCase("4")){
+                    
+                    b_ifBirth = "Not multiple birth";
+                    askUser = 0;
+                }
+                else{
+                    System.out.println("Plss input the only selected" );
+                    askUser = 1;
+                }
+                
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid Input Try Again!!!");
+                askUser = 1;
+            }
+        } while(askUser== 1);
+   
+   }
+   
+   public void getBirthOrder(){
+       
+         int askUser = 0; 
+       
+        String ch;
+        
+        do {
+            try {
+                System.out.println("");
+                System.out.println("========== C. BIRTH ORDER ==========");
+                System.out.println("");
+                System.out.println("(live birth fetal deaths including this delivery)");
+                System.out.println("");
+                System.out.println("[1] --> First ");
+                System.out.println("[2] --> Second  ");
+                System.out.println("[3] --> Third,etc ");
+                System.out.println("[4] --> Others, Specify ");
+               
+                System.out.println("");
+                System.out.print("Enter selected number: ");
+                ch = sc.nextLine();
+                // askUserAgain();
+                // System.out.print("Enter: ");
+                // askUser = s.nextInt();
+
+                if(ch.equalsIgnoreCase("1")){
+                    
+                    c_childOrder = "First";
+                   
+                    askUser = 0;
+                }
+                else if(ch.equalsIgnoreCase("2")){
+                    
+                    c_childOrder = "Second";
+                   
+                    askUser = 0;
+                    
+                } else if(ch.equalsIgnoreCase("3")){
+                    
+                    c_childOrder = "Third";
+                   
+                    askUser = 0;
+                    
+                }
+                else if(ch.equalsIgnoreCase("3")){
+                    
+                    System.out.print("Specify: ");
+                    c_childOrder = sc.nextLine();
+                    askUser = 0;
+                }
+                else{
+                    System.out.println("Plss input the only selected" );
+                    askUser = 1;
+                }
+                
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid Input Try Again!!!");
+                askUser = 1;
+            }
+        } while(askUser== 1);
+     
+  
+   }
+   
+    public void getWeight(){
+       
+        
+        System.out.println("");
+        System.out.println("========== D. WEIGHT AT BIRTH ==========");
+        System.out.println("");                
+        System.out.print("Grams: ");
+        weight = sc.nextDouble();
+        System.out.println("");
+
+   }
+    
+    //================================================================================================================//
+    // MOTHER SECTION PART                                                                                            //
+    //================================================================================================================//
+    
+  
 }
