@@ -81,7 +81,12 @@ public class Certificate_Class extends Data {
         System.out.println("=======================================");
         System.out.println("");
         getaddtionalInfo();
-        
+        geta_Attendant();
+        getbCertificationBirth();
+        getInformant();
+        getPreparedBy();
+        getRegistar();
+        successDisplay();
         
         
       
@@ -825,9 +830,21 @@ public class Certificate_Class extends Data {
             System.out.println("");
             System.out.print("I hereby that i attended the birth of the child who  was born alive at () o clock am/pm on the date stated about: ");
             timeAttend = sc.nextLine();
-                                                                            //checks if the user tried to enter or space only
-            if ( timeAttend.isEmpty() ||  timeAttend.equals(" "))
-                
+            System.out.print("Enter Name in print (ALL CAPITAL): ");
+            attendName = sc.nextLine();
+            System.out.print("Enter Title or Positon: ");
+            attendTitle = sc.nextLine();
+            System.out.print("Enter Address: ");
+            attendAdress = sc.nextLine();
+            System.out.print("Enter Date: ");
+            attendDate = sc.nextLine();
+            
+          
+            
+                    //checks if the user tried to enter or space only
+            if ( timeAttend.isEmpty() ||  timeAttend.equals(" ") || attendName.isEmpty() ||  attendName.equals(" ") 
+                || attendTitle.isEmpty() ||  attendTitle.equals(" ") || attendAdress.isEmpty() ||  attendAdress.equals(" ") 
+                    || attendDate.isEmpty() ||  attendDate.equals(" ") )
             {
                 System.out.println("");
                 System.out.println("-------------------------------------");
@@ -841,6 +858,117 @@ public class Certificate_Class extends Data {
             }
         } while (answer01.equals("1")); // propmts user again if the input is 1
     
+    }
+    
+     public void  getInformant(){
+        
+          String answer01;
+        do {
+            System.out.println("");
+            System.out.println("========== 20. INFORMANT ==========");
+            System.out.println("");
+            System.out.print("Enter Name in print (ALL CAPITAL): ");
+            infoName = sc.nextLine();
+            System.out.print("Enter Relationship of the child: ");
+            infoRelo = sc.nextLine();
+            System.out.print("Enter Address: ");
+            infoAddress = sc.nextLine();
+            System.out.print("Enter Date: ");
+            infoDate = sc.nextLine();
+            
+          
+            
+                    //checks if the user tried to enter or space only
+            if ( infoName.isEmpty() ||  infoName.equals(" ") || infoRelo.isEmpty() ||  infoRelo.equals(" ") 
+                || infoAddress.isEmpty() ||  infoAddress.equals(" ") || infoDate.isEmpty() ||  infoDate.equals(" "))    
+            {
+                System.out.println("");
+                System.out.println("-------------------------------------");
+                System.out.println("Fill the blank / Try Again ... Thank you");
+                answer01 = "1";
+                
+            }else {
+                askUserAgain();
+                System.out.print("Enter: ");
+                answer01 = sc.nextLine();
+            }
+        } while (answer01.equals("1")); // propmts user again if the input is 1
     
     }
+    
+      public void  getPreparedBy(){
+        
+          String answer01;
+        do {
+            System.out.println("");
+            System.out.println("========== 21. PREPARED BY ==========");
+            System.out.println("");
+            System.out.print("Enter Name in print (ALL CAPITAL): ");
+            preName = sc.nextLine();
+            System.out.print("Enter Title or Position: ");
+            preTitle = sc.nextLine();
+            System.out.print("Enter Date: ");
+            preDate = sc.nextLine();
+            
+          
+            
+                    //checks if the user tried to enter or space only
+            if ( preName.isEmpty() ||  preName.equals(" ") || preTitle.isEmpty() ||  preTitle.equals(" ") 
+                || preDate.isEmpty() ||  preDate.equals(" "))    
+            {
+                System.out.println("");
+                System.out.println("-------------------------------------");
+                System.out.println("Fill the blank / Try Again ... Thank you");
+                answer01 = "1";
+                
+            }else {
+                askUserAgain();
+                System.out.print("Enter: ");
+                answer01 = sc.nextLine();
+            }
+        } while (answer01.equals("1")); // propmts user again if the input is 1
+    
+    }
+      
+     public void  getRegistar(){
+        
+          String answer01;
+        do {
+            System.out.println("");
+            System.out.println("========== 22.  Received at the office of civil registrar ==========");
+            System.out.println("");
+            System.out.print("Enter Name in print (ALL CAPITAL): ");
+            regiName = sc.nextLine();
+            System.out.print("Enter Title or Position: ");
+            regiTitle = sc.nextLine();
+            System.out.print("Enter Date: ");
+            regiDate = sc.nextLine();
+            
+          
+            
+                    //checks if the user tried to enter or space only
+            if ( regiName.isEmpty() ||  regiName.equals(" ") || regiTitle.isEmpty() ||  regiTitle.equals(" ") 
+                || regiDate.isEmpty() ||  regiDate.equals(" "))    
+            {
+                System.out.println("");
+                System.out.println("-------------------------------------");
+                System.out.println("Fill the blank / Try Again ... Thank you");
+                answer01 = "1";
+                
+            }else {
+                askUserAgain();
+                System.out.print("Enter: ");
+                answer01 = sc.nextLine();
+            }
+        } while (answer01.equals("1")); // propmts user again if the input is 1
+    
+    }
+    
+     public void successDisplay(){
+         
+         
+         System.out.println("Registered Successfully");
+
+     }
+     
 }
