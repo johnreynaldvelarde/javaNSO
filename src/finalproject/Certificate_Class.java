@@ -68,17 +68,28 @@ public class Certificate_Class extends Data {
         System.out.println("");
         System.out.println("========== CHILD INFORMATION ==========");
         System.out.println("");
-        System.out.println("Child Name: " + c_firstname +" "+ c_middlename +" "+ c_lastname);
-        System.out.println("Sex: " + childSex);
-        System.out.println("Date of Birth: " + childBirth);
-        System.out.println("A. Type of birth: " + a_typeBirth);
+        System.out.println("1. Child Name ");
+        System.out.println("(First) " + c_firstname );
+        System.out.println("(Middle) " + c_middlename );
+        System.out.println("(Last) " + c_lastname );
+        System.out.println("");
+        System.out.println("2. Sex: " + childSex);
+        System.out.println("3. Date of Birth: " + childBirth);
+        System.out.println("4. Place of birth: " + childPlace);
+        System.out.println("5. A. Type of birth: " + a_typeBirth);
         System.out.println("B. If multiple birth, child was: " + b_ifBirth);
         System.out.println("C. Birth order: " + c_childOrder);
         System.out.println("D. Weight at birth: " + weight);
         System.out.println("");
         System.out.println("========== MOTHER INFORMATION ==========");
         System.out.println("");
-    
+        System.out.println("6. Maiden Name ");
+        System.out.println("(First) " + m_firstname );
+        System.out.println("(Middle) " + m_middlename );
+        System.out.println("(Last) " + m_lastname );
+        System.out.println("");
+        System.out.println("7. Citenship: " + motherCite);
+        System.out.println("8. Citenship: " + motherReli);
         
     }
     
@@ -123,7 +134,7 @@ public class Certificate_Class extends Data {
         String answer01;
         do {
             System.out.println("");
-            System.out.println("========== Name ==========");
+            System.out.println("========== 1. CHILD NAME ==========");
             System.out.println("");
             System.out.print("Enter First Name: ");
             c_firstname = sc.nextLine();
@@ -156,7 +167,7 @@ public class Certificate_Class extends Data {
         char sex;
         do {
             try {
-                System.out.println("========== Sex ==========");
+                System.out.println("========== 2. SEX  ==========");
                 System.out.println("");
                 System.out.println("Press [F] for Female, Press [M] for Male");
                 System.out.print("Enter Sex: ");
@@ -194,7 +205,7 @@ public class Certificate_Class extends Data {
     public void getDate() { // move this to child class... date's use is for marriage
         
         System.out.println("");
-        System.out.println("========== Date of Birth ==========");
+        System.out.println("========== 3. DATE OF BIRTH ==========");
         System.out.println("");
         System.out.println("Example: dd/mm/yyyy");
         
@@ -246,6 +257,10 @@ public class Certificate_Class extends Data {
     }
     
    public void getPlaceBirth(){
+       
+       System.out.println("");
+       System.out.println("========== 4. PLACE OF BIRTH ==========");
+       System.out.println("");
    
    
    
@@ -260,7 +275,7 @@ public class Certificate_Class extends Data {
         do {
             try {
                 System.out.println("");
-                System.out.println("========== A. TYPE OF BIRTH ==========");
+                System.out.println("========== 5. A. TYPE OF BIRTH ==========");
                 System.out.println("");
                 System.out.println("[1] --> Single ");
                 System.out.println("[2] --> Twin   ");
@@ -439,6 +454,54 @@ public class Certificate_Class extends Data {
     //================================================================================================================//
     // MOTHER SECTION PART                                                                                            //
     //================================================================================================================//
+    
+    public void getMother(){
+        
+         String answer01;
+        do {
+            System.out.println("");
+            System.out.println("========== 6. MAIDEN NAME ==========");
+            System.out.println("");
+            System.out.print("Enter First Name: ");
+            m_firstname = sc.nextLine();
+            System.out.print("Enter Middle Name: ");
+            m_middlename = sc.nextLine();
+            System.out.print("Enter Last Name: ");
+            m_lastname = sc.nextLine();
+                                                                            //checks if the user tried to enter or space only
+            if (  m_firstname.isEmpty() ||   m_firstname.equals(" ") || m_middlename .isEmpty() || m_middlename .equals(" ")
+                || m_lastname.isEmpty() || m_lastname.equals(" ")) 
+            {
+                System.out.println("");
+                System.out.println("-------------------------------------");
+                System.out.println("Please, don't input space or enter only in names... Thank you");
+                answer01 = "1";
+                
+            } else {
+                askUserAgain();
+                System.out.print("Enter: ");
+                answer01 = sc.nextLine();
+            }
+        } while (answer01.equals("1")); // propmts user again if the input is 1
+        
+        // mother citizenship
+        
+        System.out.println("");
+        System.out.println("========== 7. CITIZENSHIP ==========");
+        System.out.println(""); 
+        System.out.print("Enter Citizenship: ");
+        motherCite = sc.nextLine();
+        
+        // mother religion
+        
+        System.out.println("");
+        System.out.println("========== 8. RELIGION ==========");
+        System.out.println(""); 
+        System.out.print("Enter Religion: ");
+        motherReli = sc.nextLine();
+        
+   
+    }
     
   
 }

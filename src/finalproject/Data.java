@@ -31,10 +31,24 @@ public class Data  {
     int ranID;
     
     String c_firstname, c_middlename, c_lastname;
+    String m_firstname, m_middlename, m_lastname;
+    String f_firstname, f_middlename, f_lastname;
+   
     int day, month, year;  
     
-    String childName, childSex, childBirth, a_typeBirth, b_ifBirth, c_childOrder;
+    // child info
+    String childName, childSex, childBirth, childPlace, a_typeBirth, b_ifBirth, c_childOrder;
     double weight;
+    
+    // mother info
+    String motherName, motherCite, motherReli, motherOccu, motherResidence;
+    int a_totalNum, b_stillLive, c_childDied, motherAge;
+    
+    // father info
+    String fatherName, fatherCite, fatherReli, fatherOccu;
+    int fatherAge;
+   
+    // another info;
     
     
     
@@ -44,6 +58,9 @@ public class Data  {
         
       
       childName =  c_lastname + "," + c_firstname + " " + c_middlename;
+      motherName = m_lastname + "," + m_firstname + " " + m_middlename;
+      fatherName = f_lastname + "," + f_firstname + " " + f_middlename;
+      
       childBirth = day + "/" + month + "/" + year;
       
       
