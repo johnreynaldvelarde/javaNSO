@@ -60,8 +60,31 @@ public class Certificate_Class extends Data {
         System.out.println("");
         
         getMother();
+        getmotherResidence();
+        
+        // father turn
+        
+        System.out.println("");
+        System.out.println("=======================================");
+        System.out.println("=          FATHER INFORMATION         =");
+        System.out.println("=======================================");
+        System.out.println("");
+        
+        getFatherInfo();
+        
+        // last addtional information
+        
+          
+        System.out.println("");
+        System.out.println("=======================================");
+        System.out.println("=          ANOTHER INFORMATION        =");
+        System.out.println("=======================================");
+        System.out.println("");
+        
+        
         
       
+        // activation of colletion of data
         collectData();
          
     }
@@ -95,8 +118,30 @@ public class Certificate_Class extends Data {
         System.out.println("(Last) " + m_lastname );
         System.out.println("");
         System.out.println("7. Citenship: " + motherCite);
-        System.out.println("8. Citenship: " + motherReli);
-        
+        System.out.println("8. Religion: " + motherReli);
+        System.out.println("");
+        System.out.println("9. A. Total number of children born alive: " + a_totalNum);
+        System.out.println("   B. Total number of children born alive: " + b_stillLive);
+        System.out.println("   C. Total number of children born alive: " + c_childDied);
+        System.out.println("");
+        System.out.println("10. Occupation: " + motherOccu);
+        System.out.println("11. Age at the time of this birth: " + motherAge);
+        System.out.println("12. Residence: " + motherResidence);
+        System.out.println("");
+        System.out.println("========== FATHER INFORMATION ==========");
+        System.out.println("");
+        System.out.println("13. Father Name ");
+        System.out.println("(First) " + f_firstname );
+        System.out.println("(Middle) " + f_middlename );
+        System.out.println("(Last) " + f_lastname );
+        System.out.println("");
+        System.out.println("14. Citenship: " + fatherCite);
+        System.out.println("15. Religion: " + fatherReli);
+        System.out.println("16. Occupation: " + fatherOccu);
+        System.out.println("17. Age at the time of this birth: " + fatherAge);
+        System.out.println("");
+        System.out.println("========== ANOTHER INFORMATION ==========");
+        System.out.println("");
     }
     
     // generate all list of birth certificate // module case 3
@@ -112,8 +157,6 @@ public class Certificate_Class extends Data {
          
          }
     } 
-    
-    
     
     
      // search for specific birth certificate
@@ -492,7 +535,7 @@ public class Certificate_Class extends Data {
         String answer01;
         do {
             System.out.println("");
-            System.out.println("========== 6. MAIDEN NAME ==========");
+            System.out.println("========== 6. MOTHER NAME ==========");
             System.out.println("");
             sc.nextLine();
             System.out.print("Enter First Name: ");
@@ -533,8 +576,150 @@ public class Certificate_Class extends Data {
         System.out.print("Enter Religion: ");
         motherReli = sc.nextLine();
         
+        // a. total child born alive
+        
+        System.out.println("");
+        System.out.println("========== 9. A TOTAL NUMBER OF CHILDREN BORN ALIVE ==========");
+        System.out.println("");
+        System.out.print("Enter total: ");
+        a_totalNum = sc.nextInt();
+        
+        //b. child still alive
+        
+        System.out.println("");
+        System.out.println("========== B.  NO OF CHILDREN STILL LIVING INCLUDING THIS BIRTH ==========");
+        System.out.println("");
+        System.out.print("Enter total: ");
+        b_stillLive = sc.nextInt();
+        
+        //c. born alive but dead now
+        
+        System.out.println("");
+        System.out.println("========== C.  NO OF CHILDREN BORN ALIVE BUT ARE NOW DEAD ==========");
+        System.out.println("");
+        System.out.print("Enter total: ");
+        c_childDied = sc.nextInt();
+        
+        // mother job
+        
+        System.out.println("");
+        System.out.println("========== 10. OCCUPATION ==========");
+        System.out.println("");
+        System.out.print("Enter Occupation: ");
+        motherOccu = sc.next();
+        
+        // mother age
+        
+        System.out.println("");
+        System.out.println("========== 11. AGE AT THE TIME OF THIS BIRTH ==========");
+        System.out.println("");
+        System.out.print("Enter age: ");
+        motherAge = sc.nextInt();
+        
+        // mother residence
+        
    
     }
     
-  
+    public void getmotherResidence(){
+        
+          String answer01;
+        do {
+            System.out.println("");
+            System.out.println("========== 12. RESIDENCE ==========");
+            System.out.println("");
+            sc.nextLine();
+            System.out.print("Enter House No, Street Barangay: ");
+            houseNo = sc.nextLine();
+           
+            System.out.print("Enter City/Municipality: ");
+            cityMuni = sc.nextLine();
+         
+            System.out.print("Enter Province: ");
+            province = sc.nextLine();
+           
+                                                                            //checks if the user tried to enter or space only
+            if (  houseNo.isEmpty() ||   houseNo.equals(" ") || cityMuni .isEmpty() || cityMuni .equals(" ")
+                || province.isEmpty() || province.equals(" ")) 
+            {
+                System.out.println("");
+                System.out.println("-------------------------------------");
+                System.out.println("Please, don't input space or enter only in names... Thank you");
+                answer01 = "1";
+                
+            } else {
+                askUserAgain();
+                System.out.print("Enter: ");
+                answer01 = sc.nextLine();
+            }
+        } while (answer01.equals("1")); // propmts user again if the input is 1
+    
+    }
+    
+    
+    public void getFatherInfo(){
+        
+          String answer01;
+        do {
+            System.out.println("");
+            System.out.println("========== 13. FATHER NAME ==========");
+            System.out.println("");
+            sc.nextLine();
+            System.out.print("Enter First Name: ");
+            f_firstname = sc.nextLine();
+            System.out.print("Enter Middle Name: ");
+            f_middlename = sc.nextLine();
+            System.out.print("Enter Last Name: ");
+            f_lastname = sc.nextLine();
+                                                                            //checks if the user tried to enter or space only
+            if (  f_firstname.isEmpty() ||   f_firstname.equals(" ") || f_middlename .isEmpty() || f_middlename .equals(" ")
+                || f_lastname.isEmpty() || f_lastname.equals(" ")) 
+            {
+                System.out.println("");
+                System.out.println("-------------------------------------");
+                System.out.println("Please, don't input space or enter only in names... Thank you");
+                answer01 = "1";
+                
+            } else {
+                askUserAgain();
+                System.out.print("Enter: ");
+                answer01 = sc.nextLine();
+            }
+        } while (answer01.equals("1")); // propmts user again if the input is 1
+        
+            // father citizenship
+            System.out.println("");
+            System.out.println("========== 14. CITIZENSHIP ==========");
+            System.out.println(""); 
+            System.out.print("Enter Citizenship: ");
+            fatherCite = sc.nextLine();
+        
+            // father religion
+        
+            System.out.println("");
+            System.out.println("========== 15. RELIGION ==========");
+            System.out.println(""); 
+            System.out.print("Enter Religion: ");
+            fatherReli = sc.nextLine();  
+            
+            
+            // father job
+            
+            System.out.println("");
+            System.out.println("========== 16. OCCUPATION ==========");
+            System.out.println("");
+            System.out.print("Enter Occupation: ");
+            fatherOccu = sc.next();
+    
+            // father age
+            
+            System.out.println("");
+            System.out.println("========== 17. AGE AT THE TIME OF THIS BIRTH ==========");
+            System.out.println("");
+            System.out.print("Enter age: ");
+            fatherAge = sc.nextInt();
+    
+    }
+    
+   
 }
