@@ -38,8 +38,10 @@ public class Certificate_Class extends Data {
         getchildInfoName();
         // asking sex
         getSex();
-        // asking child birth
+        // asking child birth date
         getDate();
+        // place birth
+        getPlaceBirth();
         // a_asking type of birth
         getTypeBirth();
         // b_if birth
@@ -49,11 +51,15 @@ public class Certificate_Class extends Data {
         // d child weight
         getWeight();
         
+        // mother turn
+        
         System.out.println("");
         System.out.println("=======================================");
         System.out.println("=          MOTHER INFORMATION         =");
         System.out.println("=======================================");
         System.out.println("");
+        
+        getMother();
         
       
         collectData();
@@ -258,12 +264,38 @@ public class Certificate_Class extends Data {
     
    public void getPlaceBirth(){
        
-       System.out.println("");
-       System.out.println("========== 4. PLACE OF BIRTH ==========");
-       System.out.println("");
-   
-   
-   
+        
+         String answer01;
+        do {
+            System.out.println("");
+            System.out.println("========== 4 PLACE BIRTH ==========");
+            System.out.println("");
+            sc.nextLine();
+            System.out.print("Enter Name of Hospital/Clinic/Institution/House No. Street Barangay: ");
+            nameHospital = sc.nextLine();
+           
+            System.out.print("Enter City/Municipality: ");
+            nameCityMuni = sc.nextLine();
+         
+            System.out.print("Enter Province: ");
+            nameProvince = sc.nextLine();
+           
+                                                                            //checks if the user tried to enter or space only
+            if (  nameHospital.isEmpty() ||   nameHospital.equals(" ") || nameCityMuni .isEmpty() || nameCityMuni .equals(" ")
+                || nameProvince.isEmpty() || nameProvince.equals(" ")) 
+            {
+                System.out.println("");
+                System.out.println("-------------------------------------");
+                System.out.println("Please, don't input space or enter only in names... Thank you");
+                answer01 = "1";
+                
+            } else {
+                askUserAgain();
+                System.out.print("Enter: ");
+                answer01 = sc.nextLine();
+            }
+        } while (answer01.equals("1")); // propmts user again if the input is 1
+
    }
    
    public void getTypeBirth(){
@@ -457,11 +489,12 @@ public class Certificate_Class extends Data {
     
     public void getMother(){
         
-         String answer01;
+        String answer01;
         do {
             System.out.println("");
             System.out.println("========== 6. MAIDEN NAME ==========");
             System.out.println("");
+            sc.nextLine();
             System.out.print("Enter First Name: ");
             m_firstname = sc.nextLine();
             System.out.print("Enter Middle Name: ");

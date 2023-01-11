@@ -33,6 +33,7 @@ public class Data  {
     String c_firstname, c_middlename, c_lastname;
     String m_firstname, m_middlename, m_lastname;
     String f_firstname, f_middlename, f_lastname;
+    String nameHospital, nameCityMuni, nameProvince;
    
     int day, month, year;  
     
@@ -60,6 +61,8 @@ public class Data  {
       childName =  c_lastname + "," + c_firstname + " " + c_middlename;
       motherName = m_lastname + "," + m_firstname + " " + m_middlename;
       fatherName = f_lastname + "," + f_firstname + " " + f_middlename;
+      
+      childPlace = nameHospital + " / " + nameCityMuni + " / "+ nameProvince;
       
       childBirth = day + "/" + month + "/" + year;
       
