@@ -80,6 +80,7 @@ public class Certificate_Class extends Data {
         System.out.println("=          ANOTHER INFORMATION        =");
         System.out.println("=======================================");
         System.out.println("");
+        getaddtionalInfo();
         
         
         
@@ -185,6 +186,7 @@ public class Certificate_Class extends Data {
             System.out.println("");
             System.out.println("========== 1. CHILD NAME ==========");
             System.out.println("");
+            sc.nextLine();
             System.out.print("Enter First Name: ");
             c_firstname = sc.nextLine();
             System.out.print("Enter Middle Name: ");
@@ -452,7 +454,7 @@ public class Certificate_Class extends Data {
    
    public void getBirthOrder(){
        
-         int askUser = 0; 
+        int askUser = 0; 
        
         String ch;
         
@@ -664,7 +666,6 @@ public class Certificate_Class extends Data {
             System.out.println("");
             System.out.println("========== 13. FATHER NAME ==========");
             System.out.println("");
-            sc.nextLine();
             System.out.print("Enter First Name: ");
             f_firstname = sc.nextLine();
             System.out.print("Enter Middle Name: ");
@@ -721,5 +722,125 @@ public class Certificate_Class extends Data {
     
     }
     
+    public void getaddtionalInfo(){
+        
+          String answer01;
+        do {
+            System.out.println("");
+            System.out.println("========== 18. DATE AND PLACE OF MARRIAGE OF THE PARENTS ==========");
+            System.out.println("");
+            System.out.print("Enter info: ");
+            datePlace = sc.nextLine();
+                                                                            //checks if the user tried to enter or space only
+            if ( datePlace.isEmpty() ||  datePlace.equals(" "))
+                
+            {
+                System.out.println("");
+                System.out.println("-------------------------------------");
+                System.out.println("Fill the blank / Try Again ... Thank you");
+                answer01 = "1";
+                
+            } else {
+                askUserAgain();
+                System.out.print("Enter: ");
+                answer01 = sc.nextLine();
+            }
+        } while (answer01.equals("1")); // propmts user again if the input is 1
+    
+    }
+    
+    public void geta_Attendant(){
+        
+         int askUser = 0; 
+       
+        String ch;
+        
+        do {
+            try {
+                System.out.println("");
+                System.out.println("========== 19. ATTENDANT ==========");
+                System.out.println("");
+                System.out.println("[1] --> Physician ");
+                System.out.println("[2] --> Nurse  ");
+                System.out.println("[3] --> Midwife  ");
+                System.out.println("[4] --> Hilot(Traditonal Midwife)  ");
+                System.out.println("[5] --> Others, Specify ");
+              
+                
+                System.out.println("");
+                System.out.print("Enter selected number: ");
+                ch = sc.nextLine();
+                // askUserAgain();
+                // System.out.print("Enter: ");
+                // askUser = s.nextInt();
+
+                if(ch.equalsIgnoreCase("1")){
+                    
+                     a_attendant = "Physician";
+                   
+                    askUser = 0;
+                }
+                else if(ch.equalsIgnoreCase("2")){
+                    
+                    a_attendant = "Nurse";
+                   
+                    askUser = 0;
+                    
+                }else if(ch.equalsIgnoreCase("3")){
+                    
+                    a_attendant = "Midwife";
+                   
+                    askUser = 0;
+                }
+                else if(ch.equalsIgnoreCase("4")){
+                    
+                     a_attendant = "Hilot(Traditonal Midwife)";
+                     askUser = 0;
+                }
+                 else if(ch.equalsIgnoreCase("5")){
+                    
+                     System.out.print("Specify: ");
+                     a_attendant = sc.nextLine();
+                     askUser = 0;
+                }
+                else{
+                    System.out.println("Plss input the only selected" );
+                    askUser = 1;
+                }
+                
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid Input Try Again!!!");
+                askUser = 1;
+            }
+        } while(askUser== 1);
    
+    }
+   
+    public void  getbCertificationBirth(){
+        
+          String answer01;
+        do {
+            System.out.println("");
+            System.out.println("========== B. CERTIFICATION OF BIRTH ==========");
+            System.out.println("");
+            System.out.print("I hereby that i attended the birth of the child who  was born alive at () o clock am/pm on the date stated about: ");
+            timeAttend = sc.nextLine();
+                                                                            //checks if the user tried to enter or space only
+            if ( timeAttend.isEmpty() ||  timeAttend.equals(" "))
+                
+            {
+                System.out.println("");
+                System.out.println("-------------------------------------");
+                System.out.println("Fill the blank / Try Again ... Thank you");
+                answer01 = "1";
+                
+            } else {
+                askUserAgain();
+                System.out.print("Enter: ");
+                answer01 = sc.nextLine();
+            }
+        } while (answer01.equals("1")); // propmts user again if the input is 1
+    
+    
+    }
 }

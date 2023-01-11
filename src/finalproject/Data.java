@@ -51,7 +51,19 @@ public class Data  {
     int fatherAge;
    
     // another info;
+    String datePlace, a_attendant;
+    // b. certification
+    String attendName, attendTitle, attendAdress, attendDate;
+    String timeAttend;
     
+    // 20. informant
+    String infoName, infoRelo, infoAddress, infoDate;
+    
+    // 21.  prepared by
+    String preName,preTitle, preDate;
+    
+    // 22.registar
+    String regiName, regiTitle, regiDate;
     
     
     
